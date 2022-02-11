@@ -1,0 +1,20 @@
+<div class="">
+  <select [(ngModel)]="empleado.tipo">
+    <option value="limpiador">Limpiador</option>
+    <option value="revisor">Revisor</option>
+    <option value="operario">Operario</option>
+  </select>
+  <input type="text" [(ngModel)]="empleado.nombre" placeholder="Nombre"/>
+  <input type="text" [(ngModel)]="empleado.dni" placeholder="DNI"/>
+  <input type="tel" [(ngModel)]="empleado.telefono" placeholder="Teléfono"/>
+  <input type="number" [(ngModel)]="empleado.sueldo" placeholder="Sueldo"/>
+  <input *ngIf="empleado.tipo == 'limpiador' || empleado.tipo == 'revisor'" type="number"
+         placeholder="Horas" [(ngModel)]="empleado.horas"/>
+  <select *ngIf="empleado.tipo == 'operario' || empleado.tipo == 'limpiador'" [(ngModel)]="empleado.tren">
+    <option selected disabled value="">Elige un tren</option>
+    <option *ngFor="let viaje of viajes" [value]="viaje._id">{{viaje._origen}} - {{viaje._destino}}</option>
+  </select>
+  <input type="number" *ngIf="empleado.tipo=='operario' || empleado.tipo == 'revisor'"
+  placeholder="Viajes" [(ngModel)]="empleado.viajes"/>
+</div>
+<button class="btn btn-success" (click)="crearEmpleado()">Crear</button>

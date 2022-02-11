@@ -1,0 +1,19 @@
+<table class="table table-active">
+  <thead>
+  <tr>
+    <th>Nombre</th>
+    <th>DNI</th>
+    <th>Teléfono</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{cliente?.nombre}}</td>
+    <td>{{cliente?.dni}}</td>
+    <td><input *ngIf="cliente?.telefono" type="number" [(ngModel)]="cliente.telefono"></td>
+  </tr>
+  </tbody>
+</table>
+<div>
+  <button (click)="actualizarTlfCli()" class="btn btn-success">Actualizar Teléfono</button>
+</div>

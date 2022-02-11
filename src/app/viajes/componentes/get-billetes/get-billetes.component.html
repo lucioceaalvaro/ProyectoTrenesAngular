@@ -1,0 +1,16 @@
+<div class="todos-billetes">
+  <div class="container-crear-billete">
+    <button class="btn btn-primary" [routerLink]="['/viaje/crear-billete']">Crear billete</button>
+  </div>
+  <div class="billete-row" *ngFor="let billete of billetes">
+    <div class="billete-info">
+      <div class="billete-info-left">
+        <p class="mb-0">DNI: {{billete._dni}} - Asiento: {{billete._asiento}}<br/>Destino: {{billete._destino}} - PVP: {{sumarIva(billete)}}€<br/>Fecha: {{getFecha(billete._fecha)}}</p>
+      </div>
+      <div class="billete-info-right">
+        <button class="btn btn-danger" (click)="deleteBillete(billete._dni)">Eliminar</button>
+      </div>
+    </div>
+
+  </div>
+</div>

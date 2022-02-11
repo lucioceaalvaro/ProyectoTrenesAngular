@@ -1,0 +1,8 @@
+<div class="">
+  <select [(ngModel)]="registro.tren_id">
+    <option *ngFor="let tren of trenes" [value]="tren._id">{{tren._origen}} - {{tren._destino}}</option>
+  </select>
+  <input type="text" [(ngModel)]="registro.id" placeholder="ID">
+  <input type="text" [(ngModel)]="registro.kilometros" placeholder="Kilómetros">
+</div>
+<button class="btn btn-success" (click)="crearRegistro()">Crear</button>

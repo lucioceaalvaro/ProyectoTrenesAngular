@@ -1,0 +1,17 @@
+<div class="todos-clientes">
+  <div class="container-crear-cliente">
+    <button class="btn btn-primary" [routerLink]="['/cliente/crear']">Crear cliente</button>
+  </div>
+  <div class="cliente-row" *ngFor="let cliente of clientes">
+    <div class="cliente-info">
+      <div class="cliente-info-left">
+        <p class="mb-0">{{cliente._nombre}}</p>
+      </div>
+      <div class="cliente-info-right">
+        <button class="btn btn-info" [routerLink]="['/cliente/detail',cliente._dni]">Detalle</button>
+        <button class="btn btn-danger" (click)="deleteCliente(cliente._dni)">Eliminar</button>
+      </div>
+    </div>
+
+  </div>
+</div>

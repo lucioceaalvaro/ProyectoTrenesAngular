@@ -1,0 +1,17 @@
+<div class="todos-trenes">
+  <div class="container-crear-tren">
+    <button class="btn btn-primary" [routerLink]="['viaje/crear-tren']">Crear tren</button>
+  </div>
+  <div class="viaje-row" *ngFor="let viaje of viajes">
+    <div class="viaje-info">
+      <div class="viaje-info-left">
+        <p class="mb-0">{{viaje._origen}} - {{viaje._destino}} ({{viaje._tipoObjeto}})</p>
+      </div>
+      <div class="cliente-info-right">
+        <button class="btn btn-info" [routerLink]="['viaje/detail',viaje._id]">Detalle</button>
+        <button class="btn btn-danger" (click)="deleteTrenes(viaje._id)">Eliminar</button>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<table class="table table-active">
+  <thead>
+  <tr>
+    <th>Tipo</th>
+    <th>Origen</th>
+    <th>Destino</th>
+    <th *ngIf="viaje?._tipoObjeto === 'pasajeros'">Pasajeros</th>
+    <th *ngIf="viaje?._tipoObjeto === 'pasajeros'">Plazas</th>
+    <th *ngIf="viaje?._tipoObjeto === 'pasajeros'">Precio</th>
+
+    <th *ngIf="viaje?._tipoObjeto === 'mercancias'">Carga</th>
+    <th *ngIf="viaje?._tipoObjeto === 'mercancias'">Kilogramos</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{viaje?._tipoObjeto}}</td>
+    <td><input *ngIf="viaje?._origen" type="text" [(ngModel)]="viaje._origen"></td>
+    <td><input *ngIf="viaje?._destino" type="text" [(ngModel)]="viaje._destino"></td>
+
+    <td *ngIf="viaje?._tipoObjeto === 'pasajeros'">{{viaje?._nPasajeros}}</td>
+    <td *ngIf="viaje?._tipoObjeto === 'pasajeros'">{{viaje?._nPlazas}}</td>
+    <td *ngIf="viaje?._tipoObjeto === 'pasajeros'">
+      <input *ngIf="viaje?._precio" type="number" [(ngModel)]="viaje._precio">
+    </td>
+
+    <td *ngIf="viaje?._tipoObjeto === 'mercancias'">
+      <input *ngIf="viaje?._tipoCarga" type="text" [(ngModel)]="viaje._tipoCarga">
+    </td>
+    <td *ngIf="viaje?._tipoObjeto === 'mercancias'">
+      <input *ngIf="viaje?._kilosCarga" type="number" [(ngModel)]="viaje._kilosCarga">
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div>
+  <button (click)="actualizarOrigen()" class="btn btn-success">Actualizar Origen</button>
+  <button (click)="actualizarDestino()" class="btn btn-success">Actualizar Destino</button>
+  <button *ngIf="viaje?._tipoObjeto === 'mercancias'" (click)="actualizarCarga()" class="btn btn-success">Actualizar Carga</button>
+  <button *ngIf="viaje?._tipoObjeto === 'pasajeros'" (click)="actualizarPrecio()" class="btn btn-success">Actualizar Precio</button>
+</div>

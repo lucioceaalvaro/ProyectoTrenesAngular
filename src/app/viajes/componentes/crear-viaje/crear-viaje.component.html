@@ -1,0 +1,15 @@
+<div class="">
+  <select [(ngModel)]="tren.tipo">
+    <option value="mercancias">Mercancías</option>
+    <option value="pasajeros">Pasajeros</option>
+  </select>
+  <input type="text" [(ngModel)]="tren.id" placeholder="ID">
+  <input type="text" [(ngModel)]="tren.origen" placeholder="Origen">
+  <input type="text" [(ngModel)]="tren.destino" placeholder="Destino">
+  <input *ngIf="tren.tipo == 'mercancias'" type="text" [(ngModel)]="tren.carga" placeholder="Tipo de carga">
+  <input *ngIf="tren.tipo == 'mercancias'" type="number" [(ngModel)]="tren.cantidad" placeholder="Cantidad">
+  <input *ngIf="tren.tipo == 'pasajeros'" type="number" [(ngModel)]="tren.nPasajeros" placeholder="Número de pasajeros">
+  <input *ngIf="tren.tipo == 'pasajeros'" type="number" [(ngModel)]="tren.nPlazas" placeholder="Número de plazas">
+  <input *ngIf="tren.tipo == 'pasajeros'" type="number" [(ngModel)]="tren.precio" placeholder="Precio">
+</div>
+<button class="btn btn-success" (click)="crearTren()">Crear</button>

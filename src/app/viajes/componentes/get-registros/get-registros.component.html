@@ -1,0 +1,16 @@
+<div class="todos-registros">
+  <div class="container-crear-registro">
+    <button class="btn btn-primary" [routerLink]="['/viaje/crear-registro']">Crear registro</button>
+  </div>
+  <div class="registro-row" *ngFor="let registro of registros">
+    <div class="registro-info">
+      <div class="registro-info-left">
+        <p class="mb-0">Origen: {{registro._origen}} - Destino: {{registro._destino}} <br/>Kilómetros: {{registro._kilometros}}<br/>Fecha: {{getFecha(registro._fecha)}}</p>
+      </div>
+      <div class="registro-info-right">
+        <button class="btn btn-danger" (click)="deleteRegistro(registro._id)">Eliminar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
