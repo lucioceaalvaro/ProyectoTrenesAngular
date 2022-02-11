@@ -24,7 +24,7 @@ export class GraficosComponent implements OnInit {
       type: 'pie'
     },
     title: {
-      text: 'Browser market shares in January, 2018'
+      text: 'Salarios 2021/2022'
     },
     tooltip: {
       pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
