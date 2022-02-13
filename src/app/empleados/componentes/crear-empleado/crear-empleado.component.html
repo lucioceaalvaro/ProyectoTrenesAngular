@@ -1,0 +1,47 @@
+<div class="container-form">
+  <div class="formulario d-flex w-75 flex-wrap mx-auto mt-5 justify-content-around">
+    <div class="input">
+      <label>Tipo de empleado</label>
+      <select name="tipoObjeto" ngDefaultControl [(ngModel)]="empleado.tipo">
+        <option value="limpiador">Limpiador</option>
+        <option value="revisor">Revisor</option>
+        <option value="operario">Operario</option>
+      </select>
+    </div>
+    <div class="input">
+      <label>Nombre</label>
+      <input type="text" [(ngModel)]="empleado.nombre" placeholder="Nombre">
+    </div>
+    <div class="input">
+      <label>DNI</label>
+      <input type="text" [(ngModel)]="empleado.dni" placeholder="DNI">
+    </div>
+    <div class="input">
+      <label>Teléfono</label>
+      <input type="tel" [(ngModel)]="empleado.telefono" placeholder="Teléfono">
+    </div>
+    <div class="input">
+      <label>Sueldo</label>
+      <input type="number" [(ngModel)]="empleado.sueldo" placeholder="Sueldo">
+    </div>
+    <div class="input" *ngIf="empleado?.tipo == 'limpiador' || empleado?.tipo == 'revisor'">
+      <label>Horas</label>
+      <input type="number"
+             placeholder="Horas" [(ngModel)]="empleado.horas">
+    </div>
+    <div class="input" *ngIf="empleado?.tipo == 'operario' || empleado?.tipo == 'limpiador'" [(ngModel)]="empleado.tren">
+      <label>Elige un tren</label>
+      <select>
+        <option *ngFor="let viaje of viajes" [value]="viaje._id">{{viaje._origen}} - {{viaje._destino}}</option>
+      </select>
+    </div>
+    <div class="input" *ngIf="empleado?.tipo=='operario' || empleado?.tipo == 'revisor'">
+      <label>Viajes</label>
+      <input type="number"
+             placeholder="Viajes" [(ngModel)]="empleado.viajes">
+    </div>
+  </div>
+  <div class="mx-auto text-center mt-5">
+    <button class="btn btn-success" style="background: #408080" (click)="crearEmpleado()">Crear</button>
+  </div>
+</div>

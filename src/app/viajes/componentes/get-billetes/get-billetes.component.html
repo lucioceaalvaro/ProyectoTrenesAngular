@@ -1,0 +1,33 @@
+<div class="todos-billetes mt-5">
+  <button class="btn btn-success" style="background-color: #408080" [routerLink]="['/viaje/crear-billete']">+ Añadir</button>
+  <table class="table mx-auto w-100 mt-4">
+    <thead style="background-color: rgba(105,193,193,0.85)">
+    <tr>
+      <th>Id. Viaje</th>
+      <th>Trayecto</th>
+      <th>DNI</th>
+      <th>Asiento</th>
+      <th>Fecha</th>
+      <th>PVP</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody style="background-color: rgba(255,255,255,0.9)">
+    <tr *ngFor="let billete of billetes">
+      <td>{{billete.idTrenPasajeros}}</td>
+      <td>{{billete.origen}} - {{billete.destino}}</td>
+      <td>{{billete.dni}}</td>
+      <td>{{billete.asiento}}</td>
+      <td>{{billete.getFechaFormat()}}</td>
+      <td>{{billete.sumarIva()}}</td>
+      <td class="w-25">
+        <button class="btn btn-danger" (click)="deleteBillete(billete.dni)">
+          <mat-icon>
+            delete
+          </mat-icon>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

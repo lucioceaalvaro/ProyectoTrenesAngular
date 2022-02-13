@@ -1,0 +1,53 @@
+<mat-toolbar style="background: #408080" *ngIf="getIsAdmin()">
+
+  <mat-toolbar-row>
+    <p class="d-flex align-items-center">
+      <mat-icon mat-list-icon class="mr-2 material-icons-outlined">tram</mat-icon>
+      <span>Administración de Trenes</span>
+    </p>
+    <div class="mx-auto">
+      <button mat-button [routerLink]="'/cliente'" (click)="changeSubmenu('cliente')">
+        <mat-icon>person</mat-icon>
+        Clientes
+      </button>
+      <button mat-button [routerLink]="'/empleado'" (click)="changeSubmenu('empleado')">
+        <mat-icon>manage_accounts</mat-icon>
+        Empleados
+      </button>
+      <button mat-button [routerLink]="'/viaje'" (click)="changeSubmenu('viaje')">
+        <mat-icon>train</mat-icon>
+        Viajes
+      </button>
+    </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row *ngIf="submenu">
+    <!--    Clientes   -->
+    <nav class="mx-auto text-center" *ngIf="submenu_boolean.cliente">
+      <a mat-button [routerLink]="'cliente/todos'" routerLinkActive="btn-warning" (click)="changeSubmenu('cliente')">Consultar
+        datos</a>
+      <a mat-button [routerLink]="'cliente/graficos'" routerLinkActive="btn-warning" (click)="changeSubmenu('cliente')">Gráficos</a>
+    </nav>
+    <!--    Empleados   -->
+    <nav class="mx-auto text-center " *ngIf="submenu_boolean.empleado">
+      <a mat-button [routerLink]="'empleado/todos'" routerLinkActive="btn-warning" (click)="changeSubmenu('empleado')">Consultar
+        datos</a>
+      <a mat-button [routerLink]="'empleado/graficos'" routerLinkActive="btn-warning"
+         (click)="changeSubmenu('empleado')">Gráficos</a>
+    </nav>
+    <!--    Viajes    -->
+    <nav class="mx-auto text-center" *ngIf="submenu_boolean.viaje">
+
+      <a mat-button [routerLink]="'viaje'" routerLinkActive="btn-warning" (click)="changeSubmenu('viaje')">Consultar
+        trenes</a>
+      <a mat-button [routerLink]="'viaje/billetes'" routerLinkActive="btn-warning" (click)="changeSubmenu('viaje')">Consultar
+        billetes</a>
+      <a mat-button [routerLink]="'viaje/registros'" routerLinkActive="btn-warning" (click)="changeSubmenu('viaje')">Consultar
+        registros</a>
+      <a mat-button [routerLink]="'viaje/graficos'" routerLinkActive="btn-warning" (click)="changeSubmenu('viaje')">Gráficos</a>
+
+    </nav>
+  </mat-toolbar-row>
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>

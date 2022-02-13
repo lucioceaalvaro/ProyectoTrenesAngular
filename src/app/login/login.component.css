@@ -1,0 +1,44 @@
+.login-container {
+  height: fit-content;
+  margin: 0 auto;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 2em;
+  background: #fafbfd;
+}
+.img-login {
+  width: 45%;
+
+}
+.form-part{
+
+}
+.d-flex {
+  gap: 1em;
+}
+.form-part {
+  width: 40%;
+  text-align: center;
+}
+.form-part>input {
+  width: 100%;
+  margin: .5em !important;
+  border-radius: 10px!important;
+  height: 3em !important;
+  display: inline !important;
+  border: 1px solid #555;
+  outline: none;
+  padding: 0 1em;
+}
+.form-part>* {
+  margin: 1em auto;
+}
+
+input:focus{
+  box-shadow: 0 0 5px rgba(81, 203, 238, .5);
+  border: 1px solid rgba(81, 203, 238, .5) !important;
+}

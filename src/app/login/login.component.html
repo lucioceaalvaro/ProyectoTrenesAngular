@@ -1,0 +1,11 @@
+<div class="mx-auto w-50 login-container">
+  <div class="d-flex justify-content-around align-items-center">
+    <img src="assets/img/img-login.png" class="img-login"/>
+    <div class="form-part">
+      <h1>Iniciar sesión</h1>
+      <input type="text" [(ngModel)]="user" placeholder="Nombre de usuario">
+      <input type="password" [(ngModel)]="passwd" placeholder="Contraseña">
+      <button mat-button class="btn btn-success" (click)="login()" style="background: #408080">Iniciar sesión</button>
+    </div>
+  </div>
+</div>

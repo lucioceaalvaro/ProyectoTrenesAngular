@@ -1,0 +1,22 @@
+<div class="container-form">
+  <div class="formulario mx-auto d-flex justify-content-between flex-wrap w-75 mt-5">
+    <div class="input">
+      <label>Elige un tren de mercancías</label>
+      <select [(ngModel)]="registro.tren_id">
+        <option *ngFor="let tren of trenes" [value]="tren._id">{{tren._origen}} - {{tren._destino}}</option>
+      </select>
+    </div>
+    <div class="input">
+      <label>Id. Registro</label>
+      <input type="text" [(ngModel)]="registro.id" placeholder="ID">
+    </div>
+    <div class="input">
+      <label>Kilómetros</label>
+      <input type="text" [(ngModel)]="registro.kilometros" placeholder="Kilómetros">
+    </div>
+  </div>
+
+  <div class="mt-5 mx-auto text-center">
+    <button class="btn btn-success" (click)="crearRegistro()" style="background: #408080">Crear</button>
+  </div>
+</div>

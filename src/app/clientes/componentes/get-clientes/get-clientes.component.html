@@ -1,0 +1,30 @@
+<div class="todos-clientes mt-5">
+  <button class="btn btn-success" style="background-color: #408080" [routerLink]="['/cliente/crear']">+ Añadir</button>
+  <table class="table mx-auto w-100 mt-4">
+    <thead style="background-color: rgba(105,193,193,0.85)">
+    <tr>
+      <th>Nombre</th>
+      <th>DNI</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody style="background-color: rgba(255,255,255,0.9)">
+    <tr *ngFor="let cliente of clientes">
+      <td>{{cliente._nombre}}</td>
+      <td>{{cliente._dni}}</td>
+      <td class="w-25">
+        <button class="btn btn-info" [routerLink]="['/cliente/detail',cliente._dni]">
+          <mat-icon>
+            search
+          </mat-icon>
+        </button>
+        <button class="btn btn-danger" (click)="deleteCliente(cliente._dni)">
+          <mat-icon>
+            delete
+          </mat-icon></button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

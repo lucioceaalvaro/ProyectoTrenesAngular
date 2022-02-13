@@ -1,0 +1,24 @@
+.input {
+  width: 40%;
+}
+
+input, select {
+  width: 100%;
+  margin: 0 !important;
+  border-radius: 10px !important;
+  height: 3em !important;
+  display: inline !important;
+  border: 1px solid #555;
+  outline: none;
+  padding: 0 1em;
+}
+
+input:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, .5);
+  border: 1px solid rgba(81, 203, 238, .5) !important;
+}
+
+.formulario {
+  gap: 1em;
+}
+

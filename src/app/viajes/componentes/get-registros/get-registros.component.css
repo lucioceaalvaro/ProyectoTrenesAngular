@@ -1,0 +1,18 @@
+.todos-registros {
+  width: 50%;
+  margin: 0 auto;
+}
+.registro-row {
+  padding: .5em 2em;
+  background-color: #fafbfd;
+  border: 1px solid #eaeaea;
+}
+.registro-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.no-ver {
+  display: none!important;
+}

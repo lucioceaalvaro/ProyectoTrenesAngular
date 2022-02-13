@@ -1,0 +1,23 @@
+<div class="container-form">
+  <div class="w-75 mx-auto d-flex justify-content-center flex-wrap mt-5 formulario">
+    <div class="input">
+      <label>Nombre</label>
+      <input class="rounded" [(ngModel)]="cliente.nombre" type="text" placeholder="Nombre">
+    </div>
+    <div class="input">
+      <label>DNI</label>
+      <input class="rounded" [(ngModel)]="cliente.dni" type="text" placeholder="DNI">
+    </div>
+    <div class="input">
+      <label>Teléfono</label>
+      <input class="rounded" [(ngModel)]="cliente.telefono" type="tel" placeholder="Teléfono">
+    </div>
+    <div class="input">
+      <label>Correo electrónico</label>
+      <input class="rounded" [(ngModel)]="cliente.email" type="email" placeholder="Correo Electrónico">
+    </div>
+  </div>
+  <div class="mx-auto text-center">
+    <button class="btn btn-success text-center mt-5" (click)="crearCliente()" style="background: #408080">Crear</button>
+  </div>
+</div>

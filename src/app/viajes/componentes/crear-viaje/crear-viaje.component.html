@@ -1,0 +1,48 @@
+<div class="container-form">
+  <div class="formulario d-flex justify-content-around mx-auto w-75 flex-wrap">
+    <div class="input">
+      <label>Selecciona tipo de tren</label>
+      <select [(ngModel)]="tren.tipo">
+        <option value="mercancias">Mercancías</option>
+        <option value="pasajeros">Pasajeros</option>
+      </select>
+    </div>
+    <div class="input">
+      <label>ID</label>
+      <input type="text" [(ngModel)]="tren.id" placeholder="ID">
+    </div>
+    <div class="input">
+      <label>Origen</label>
+      <input type="text" [(ngModel)]="tren.origen" placeholder="Origen">
+    </div>
+    <div class="input">
+      <label>Destino</label>
+      <input type="text" [(ngModel)]="tren.destino" placeholder="Destino">
+    </div>
+    <div class="input" *ngIf="tren.tipo == 'mercancias'">
+      <label>Tipo de carga</label>
+      <input type="text" [(ngModel)]="tren.carga" placeholder="Tipo de carga">
+
+    </div>
+    <div class="input" *ngIf="tren.tipo == 'mercancias'">
+      <label>Cantidad</label>
+      <input type="number" [(ngModel)]="tren.cantidad" placeholder="Cantidad">
+    </div>
+    <div class="input" *ngIf="tren.tipo == 'pasajeros'">
+      <label>Número de pasajeros</label>
+      <input type="number" [(ngModel)]="tren.nPasajeros"
+             placeholder="Número de pasajeros">
+    </div>
+    <div class="input" *ngIf="tren.tipo == 'pasajeros'">
+      <label>Número de plazas</label>
+      <input type="number" [(ngModel)]="tren.nPlazas" placeholder="Número de plazas">
+    </div>
+    <div class="input" *ngIf="tren.tipo == 'pasajeros'">
+      <label>Precio</label>
+      <input type="number" [(ngModel)]="tren.precio" placeholder="Precio">
+    </div>
+  </div>
+  <div class="mx-auto text-center mt-5">
+    <button class="btn btn-success" (click)="crearTren()">Crear</button>
+  </div>
+</div>

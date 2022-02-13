@@ -1,0 +1,35 @@
+<div class="todos-trenes mt-5">
+
+  <button class="btn btn-success" style="background-color: #408080" [routerLink]="['/viaje/crear-tren']">+ Añadir</button>
+  <table class="table mx-auto w-100 mt-4">
+    <thead style="background-color: rgba(105,193,193,0.85)">
+    <tr>
+      <th>#</th>
+      <th>Trayecto</th>
+      <th>Tipo viaje</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody style="background-color: rgba(255,255,255,0.9)">
+    <tr *ngFor="let viaje of viajes">
+      <td>{{viaje._id}}</td>
+      <td>{{viaje._origen}} - {{viaje._destino}}</td>
+      <td>{{viaje._tipoObjeto}}</td>
+      <td class="w-25">
+        <button class="btn btn-info" [routerLink]="['/viaje/detail',viaje._id]">
+          <mat-icon>
+            search
+          </mat-icon>
+        </button>
+        <button class="btn btn-danger" (click)="deleteTrenes(viaje._id)">
+          <mat-icon>
+            delete
+          </mat-icon>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
+</div>

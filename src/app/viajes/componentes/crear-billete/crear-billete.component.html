@@ -1,0 +1,21 @@
+<div class="formulario d-flex w-50 flex-wrap mx-auto mt-5">
+  <div class="input">
+    <label>Selecciona un cliente</label>
+    <select [(ngModel)]="billete.dni">
+      <option *ngFor="let cliente of clientes" [value]="cliente._dni">{{cliente._nombre}}</option>
+    </select>
+  </div>
+  <div class="input">
+    <label>Selecciona un tren</label>
+    <select [(ngModel)]="billete.idTrenPasajeros">
+      <option *ngFor="let tren of trenes" [value]="tren._id">{{tren._origen}} - {{tren._destino}}</option>
+    </select>
+  </div>
+  <div class="input">
+    <label>Asiento</label>
+    <input type="text" [(ngModel)]="billete.asiento" placeholder="Asiento">
+  </div>
+</div>
+<div class="mx-auto text-center mt-5">
+  <button class="btn btn-success" (click)="crearBillete()" style="background: #408080">Crear</button>
+</div>
