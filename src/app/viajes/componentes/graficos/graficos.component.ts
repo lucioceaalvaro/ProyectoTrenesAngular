@@ -21,7 +21,8 @@ export class GraficosComponent implements OnInit {
   Highcharts: typeof Highcharts = Highcharts;
   chartOptions: any = {
     chart: {
-      type: 'bar'
+      type: 'bar',
+      height:"500px"
     },
     title: {
       text: 'Trenes más rentables'
