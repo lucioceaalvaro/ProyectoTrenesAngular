@@ -6,7 +6,7 @@ Se trata de un programa que gestiona una aplicacion de andministracion de viajes
 
 Funciones que se pueden Realizar:
 
-  -Dar de alta
+  -Dar de alta,modificar y eliminar.
   
       -Empleados de todos los tipos
       -Viajes
