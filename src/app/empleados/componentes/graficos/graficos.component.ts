@@ -28,7 +28,8 @@ export class GraficosComponent implements OnInit {
         beta: 15,
         depth: 50,
         viewDistance: 25
-      }
+      },
+      height:"500px"
     },
     title: {
       text: 'Clasificación de empleados por salario'

@@ -23,8 +23,11 @@ export class GraficosComponent implements OnInit {
       plotBackgroundColor: null,
       plotBorderWidth: null,
       plotShadow: false,
-      type: 'pie'
+      type: 'pie',
+      height:"500px"
     },
+    
+      
     title: {
       text: 'Clientes con mayor número de viajes'
     },
